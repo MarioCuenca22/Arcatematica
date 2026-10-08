@@ -1,0 +1,123 @@
+.clients-intro-wrap {
+	display: flex;
+	align-items: center;
+	gap: 2em;
+	margin: 0 0 3em 0;
+	box-sizing: border-box;
+	max-width: 100%;
+}
+
+.clients-intro {
+	max-width: 46em;
+	margin: 0;
+	color: var(--text);
+	flex: 1;
+	min-width: 0;
+}
+
+.clients-intro-wrap .arcalogo {
+	--logo-width: 140px;
+	width: var(--logo-width);
+	max-width: 100%;
+	height: auto;
+	flex-shrink: 0;
+
+	
+}
+
+@media screen and (max-width: 736px) {
+	.clients-intro-wrap {
+		flex-direction: column;
+		align-items: flex-start;
+	}
+}
+
+.clients-category {
+	margin: 0 0 3.5em 0;
+}
+
+.clients-category-title {
+	display: flex;
+	align-items: center;
+	gap: 0.65em;
+	font-size: 1.3em;
+	font-weight: 600;
+	letter-spacing: 0.03em;
+	text-transform: uppercase;
+	color: var(--heading);
+	border-bottom: 2px solid var(--border);
+	padding-bottom: 0.5em;
+	margin-bottom: 1.5em;
+}
+
+.clients-category-title .fa-fw {
+	color: var(--heading);
+	font-size: 1.1em;
+}
+
+.clients-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+	gap: 1.25em;
+}
+
+.client-card {
+	background: var(--surface);
+	border: 1px solid var(--border);
+	border-left: 3px solid var(--accent);
+	border-radius: 4px;
+	padding: 1.3em 1.5em;
+	transition: box-shadow 0.25s ease, transform 0.25s ease;
+}
+
+.client-card:hover {
+	box-shadow: 0 4px 14px rgba(30, 51, 70, 0.1);
+	transform: translateY(-2px);
+}
+
+.client-card h4 {
+	margin: 0 0 0.15em 0;
+	font-size: 1.02em;
+	font-weight: 600;
+	color: var(--heading);
+}
+
+.client-card .client-location {
+	display: block;
+	font-size: 0.82em;
+	color: var(--muted);
+	font-style: italic;
+	margin-bottom: 0.5em;
+}
+
+.client-card ul.client-departments {
+	margin: 0.5em 0 0 0;
+	padding: 0;
+	list-style: none;
+}
+
+.client-card ul.client-departments li {
+	position: relative;
+	padding-left: 1em;
+	font-size: 0.9em;
+	color: var(--text);
+	line-height: 1.6em;
+}
+
+.client-card ul.client-departments li:before {
+	content: "";
+	position: absolute;
+	left: 0;
+	top: 0.72em;
+	width: 5px;
+	height: 5px;
+	border-radius: 50%;
+	background: var(--accent);
+}
+
+.clients-closing {
+	margin-top: 1em;
+	padding-top: 2em;
+	border-top: 1px solid var(--border);
+	color: var(--text);
+}

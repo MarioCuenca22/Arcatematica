@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100" role="img" aria-label="Imagen pendiente de sustituir">
+	<rect x="1" y="1" width="98" height="98" rx="10" fill="#f6f6f6" stroke="#e5e5e5" stroke-width="2"/>
+	<circle cx="34" cy="36" r="9" fill="#c9c9c9"/>
+	<path d="M14 74 L40 46 L58 64 L70 50 L86 74 Z" fill="#c9c9c9"/>
+</svg>

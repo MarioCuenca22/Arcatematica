@@ -1,0 +1,23 @@
+@import 'libs/vars';
+@import 'libs/functions';
+@import 'libs/mixins';
+@import 'libs/vendor';
+@import 'libs/breakpoints';
+@import 'libs/html-grid';
+
+
+
+/* Banner */
+
+	#banner {
+		> article {
+			display: none;
+
+			&:first-child {
+				background-image: url('../../images/slide01.jpg');
+				display: block !important;
+				opacity: 1 !important;
+				visibility: visible !important;
+			}
+		}
+	}

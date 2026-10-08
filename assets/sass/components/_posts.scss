@@ -1,0 +1,35 @@
+
+
+/* Posts */
+
+	.posts {
+		@include vendor('display', 'flex');
+		@include vendor('flex-wrap', 'wrap');
+		@include vendor('justify-content', 'space-between');
+		@include vendor('align-items', 'stretch');
+
+		.post {
+			width: calc(33.33333333% - 1.25em);
+		}
+
+		@include breakpoint('<=large') {
+			.post {
+				width: calc(50% - 1em);
+			}
+		}
+
+		// Les nostres activitats (#three): keep 3 columns on the 'large' tier too
+		@media screen and (min-width: 981px) and (max-width: 1280px) {
+			#three & .post {
+				width: calc(33.33333333% - 1em);
+			}
+		}
+
+		@include breakpoint('<=small') {
+			display: block;
+
+			.post {
+				width: 100%;
+			}
+		}
+	}

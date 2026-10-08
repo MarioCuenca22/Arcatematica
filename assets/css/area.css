@@ -1,0 +1,214 @@
+/* Páginas de área (propuesta): educaicultura-v2.html
+   Usa las variables de color de main.css. Se puede borrar junto con la página. */
+
+.area-intro {
+	display: flex;
+	align-items: center;
+	gap: 3em;
+	margin-bottom: 4em;
+}
+
+	.area-intro .text {
+		flex: 1 1 55%;
+	}
+
+	.area-intro .lead {
+		font-size: 1.15em;
+		line-height: 1.7;
+	}
+
+	.area-intro .image {
+		flex: 1 1 45%;
+		margin: 0;
+	}
+
+	.area-intro .image img {
+		display: block;
+		width: 100%;
+		border-radius: 4px;
+	}
+
+.area-section {
+	margin-bottom: 4em;
+}
+
+	.area-section > h3 {
+		border-bottom: 1px solid var(--border);
+		padding-bottom: 0.5em;
+		margin-bottom: 1.5em;
+	}
+
+/* Tarjetas de actividad */
+.area-cards {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(16em, 1fr));
+	gap: 1.5em;
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+	.area-cards > li {
+		padding: 0;
+		background: var(--surface);
+		border-radius: 4px;
+		overflow: hidden;
+		display: flex;
+		flex-direction: column;
+	}
+
+	.area-cards img {
+		display: block;
+		width: 100%;
+		height: 11em;
+		object-fit: cover;
+	}
+
+	.area-cards .card-body {
+		padding: 1.25em 1.5em 1.5em;
+	}
+
+	.area-cards h4 {
+		margin: 0 0 0.5em;
+	}
+
+	.area-cards p {
+		margin: 0;
+		font-size: 0.95em;
+	}
+
+	.area-cards .icon {
+		display: inline-block;
+		margin-right: 0.4em;
+		opacity: 0.6;
+	}
+
+/* Lista compacta con iconos (servicios complementarios) */
+.area-list {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(18em, 1fr));
+	gap: 1.25em 2em;
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+	.area-list > li {
+		display: flex;
+		gap: 1em;
+		padding: 0;
+	}
+
+	.area-list .icon {
+		flex: 0 0 2.5em;
+		height: 2.5em;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		border-radius: 50%;
+		background: var(--surface);
+	}
+
+	.area-list strong {
+		display: block;
+	}
+
+	.area-list p {
+		margin: 0.2em 0 0;
+		font-size: 0.95em;
+	}
+
+/* Pasos */
+.area-steps {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	gap: 1.5em;
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	counter-reset: step;
+}
+
+	.area-steps > li {
+		padding: 0;
+		counter-increment: step;
+	}
+
+	.area-steps > li:before {
+		content: counter(step);
+		display: block;
+		width: 2em;
+		height: 2em;
+		line-height: 2em;
+		text-align: center;
+		border: 1px solid var(--primary);
+		border-radius: 50%;
+		font-weight: 600;
+		margin-bottom: 0.75em;
+	}
+
+	.area-steps strong {
+		display: block;
+		margin-bottom: 0.25em;
+	}
+
+	.area-steps p {
+		margin: 0;
+		font-size: 0.95em;
+	}
+
+/* Públicos */
+.area-tags {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.6em;
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+	.area-tags > li {
+		padding: 0.35em 1em;
+		border: 1px solid var(--border);
+		border-radius: 2em;
+		font-size: 0.95em;
+	}
+
+/* Llamada a la acción */
+.area-cta {
+	text-align: center;
+	padding: 2.5em 2em;
+	background: var(--surface);
+	border-radius: 4px;
+}
+
+	.area-cta p {
+		max-width: 36em;
+		margin: 0 auto 1.5em;
+	}
+
+	.area-cta .actions {
+		justify-content: center;
+		margin-bottom: 0;
+	}
+
+@media screen and (max-width: 980px) {
+
+	.area-intro {
+		flex-direction: column;
+		gap: 1.5em;
+	}
+
+	.area-steps {
+		grid-template-columns: repeat(2, 1fr);
+	}
+
+}
+
+@media screen and (max-width: 480px) {
+
+	.area-steps {
+		grid-template-columns: 1fr;
+	}
+
+}
