@@ -238,6 +238,9 @@
 
 	};
 
+	// Copyright year (auto-updates every year).
+		$('.year').text(new Date().getFullYear());
+
 	// Breakpoints.
 		breakpoints({
 			xlarge:   [ '1281px',  '1680px' ],

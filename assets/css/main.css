@@ -1,11 +1,11 @@
 @import url(fontawesome-all.min.css);
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600|Raleway:500,700,800");
 
-/* ==========================================================================
-   PALETA DE COLORES
-   Cambia aquí los colores de toda la web. Se aplican en la sección
-   "Paleta de colores" al final de este archivo y en clients.css / area.css.
-   ========================================================================== */
+/* Estilos de arcatematica.com. Se editan directamente aquí: este archivo ya no
+   se genera desde assets/sass (que es el SASS original de la plantilla y no
+   tiene los cambios de la web). */
+
+/* Colores del sitio */
 
 :root {
 	--bg: #fffcf2;              /* Fondo general */
@@ -4143,10 +4143,7 @@ input, select, textarea {
 		box-shadow: 0 0 0.125em 0 rgba(0, 0, 0, 0.35);
 	}
 
-		/* Selector d'idioma: menú curt, no necessita els 13em per defecte.
-		   Amb l'ample estàndard, el desplegament de l'últim element del nav
-		   (arran de la vora dreta) desbordava la finestra i dropotron el
-		   recol·locava cap a l'esquerra, tapant "Nosaltres/Nosotros". */
+		/* Menú de idioma más estrecho, para que no se salga por la derecha */
 		.dropotron.lang-menu {
 			min-width: 4.5em;
 		}
@@ -4509,7 +4506,7 @@ input, select, textarea {
 
 		}
 
-		/* Logo slider (una sola línia, rotació automàtica) */
+		/* Carrusel de logos */
 
 		#footer .logo-slider {
 			--logo-w: 130px;
@@ -4829,7 +4826,7 @@ input, select, textarea {
 
 		}
 
-/* Features: alinear logos/imagenes con los iconos hexagonales */
+/* Logos de certificados de la portada */
 
 	.features .content .icon-slot {
 		display: flex;
@@ -4861,7 +4858,6 @@ input, select, textarea {
 
 		@media screen and (max-width: 980px) {
 
-			/* En columna, el logo no debe sobresalir por encima del separador */
 			.features .content .icon-slot {
 				height: auto;
 				margin-bottom: 1em;
@@ -4869,7 +4865,7 @@ input, select, textarea {
 
 		}
 
-/* Formulario de contacto: mensaje de enviado / error (assets/js/contact-form.js) */
+/* Mensaje del formulario de contacto */
 .form-status {
 	font-weight: 600;
 	margin: 0 0 1em;
@@ -4887,12 +4883,7 @@ input, select, textarea {
 	color: #c62828;
 }
 
-/* ==========================================================================
-   Paleta de colores
-   Sustituye los grises de la plantilla por las variables de :root
-   (definidas al principio del archivo). Para cambiar un color, edita la
-   variable, no estas reglas.
-   ========================================================================== */
+/* Colores propios encima de los de la plantilla (se cambian en :root, arriba) */
 
 /* Base */
 
@@ -5112,7 +5103,6 @@ input, select, textarea {
 			border-color: var(--border);
 		}
 
-		/* Tarjetas de actividades: mismo aspecto que la caja destacada */
 		.wrapper.style2 .post .content {
 			background-color: var(--bg);
 			border: solid 1px var(--border);
@@ -5212,7 +5202,7 @@ input, select, textarea {
 			color: var(--heading);
 		}
 
-/* Banner: velo azulado en lugar de negro */
+/* Banner */
 
 	#banner {
 		background-color: var(--overlay);
@@ -5233,7 +5223,6 @@ input, select, textarea {
 
 /* Pie */
 
-	/* Sin fondo de color: varios logos son JPG con fondo blanco */
 	#footer {
 		border-top-color: var(--border);
 	}
@@ -5242,7 +5231,6 @@ input, select, textarea {
 			color: var(--heading);
 		}
 
-			/* El título está centrado: la raya también */
 			#footer .footer-certs-title:after {
 				left: 50%;
 				-moz-transform: translateX(-50%);
@@ -5256,3 +5244,84 @@ input, select, textarea {
 		#footer .menu {
 			color: var(--muted);
 		}
+
+/* Página 404 */
+
+	.error-404-wrapper {
+		text-align: center;
+	}
+
+	.error-404-hero {
+		margin: 0 0 1.5em 0;
+	}
+
+	.error-404-icon {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		width: 4.5em;
+		height: 4.5em;
+		margin-bottom: 0.5em;
+		border-radius: 100%;
+		background-color: var(--primary-soft);
+		color: var(--accent);
+		font-size: 1.5em;
+		animation: error-404-spin 6s linear infinite;
+	}
+
+	.error-404-code {
+		font-size: 5.5em;
+		font-weight: 800;
+		line-height: 1;
+		margin: 0;
+		letter-spacing: 0.05em;
+		color: var(--heading);
+		opacity: 0.12;
+	}
+
+	@keyframes error-404-spin {
+		from { transform: rotate(0deg); }
+		to { transform: rotate(360deg); }
+	}
+
+	.error-404-wrapper header.major h2:after {
+		left: 50%;
+		transform: translateX(-50%);
+	}
+
+	.error-404 {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(14em, 1fr));
+		gap: 2em 1.5em;
+		text-align: left;
+	}
+
+		.error-404 > section {
+			padding: 1.75em 1.75em 1.5em 1.75em;
+			border: solid 1px var(--border);
+			border-radius: 6px;
+			background-color: var(--surface);
+			transition: transform 0.2s ease, box-shadow 0.2s ease;
+		}
+
+			.error-404 > section h3 {
+				margin: 0 0 0.5em 0;
+				font-size: 1.1em;
+			}
+
+			.error-404 > section p {
+				margin: 0 0 1.25em 0;
+				color: var(--muted);
+			}
+
+			.error-404 > section .actions {
+				margin: 0;
+			}
+
+	@media screen and (max-width: 736px) {
+
+		.error-404-code {
+			font-size: 3.5em;
+		}
+
+	}

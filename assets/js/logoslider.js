@@ -1,4 +1,5 @@
-/* Footer logo slider: una sola línia que rota sola i es pausa 10s en interactuar-hi. */
+// Carrusel de logos del pie. Se para al pasar el ratón o tocarlo
+// y vuelve a moverse 1 segundo después.
 (function () {
 
 	var RESUME_DELAY = 1000;
@@ -8,14 +9,13 @@
 		if (list.children.length < 2)
 			return;
 
-		// Embolcall amb overflow amagat.
 			var slider = document.createElement('div');
 
 			slider.className = 'logo-slider';
 			list.parentNode.insertBefore(slider, list);
 			slider.appendChild(list);
 
-		// Duplicem els logos per encadenar el bucle sense salts.
+		// Los logos se duplican para que el bucle no dé saltos.
 			var originals = Array.prototype.slice.call(list.children);
 
 			originals.forEach(function (item) {
@@ -27,7 +27,7 @@
 
 			});
 
-		// Pausa temporal en passar-hi per sobre, clicar o tocar.
+		// Pausa al pasar por encima, hacer clic o tocar.
 			var timer = null,
 				hovering = false;
 
@@ -35,7 +35,6 @@
 
 				timer = null;
 
-				// Mentre el ratolí és a sobre, es manté aturat.
 				if (hovering)
 					return;
 

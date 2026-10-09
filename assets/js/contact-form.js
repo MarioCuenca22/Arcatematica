@@ -1,6 +1,5 @@
-// Formulario de contacto: validación nativa (required) + mensaje de enviado / error.
-// El envío real necesita un endpoint: poner la URL en el atributo action del <form>.
-// Mientras action sea "#" o esté vacío, el formulario muestra error y no simula un envío.
+// Formulario de contacto. Para que envíe, hay que poner la URL del servicio
+// de formularios en el action del <form> (ahora es "#" y muestra un error).
 (function() {
 
 	var form = document.querySelector('#contact form');
@@ -38,7 +37,6 @@
 
 		e.preventDefault();
 
-		// Muestra los mensajes de "required" del navegador
 		if (!form.reportValidity())
 			return;
 
