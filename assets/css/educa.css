@@ -4,7 +4,7 @@
 	display: grid;
 	grid-template-columns: 3fr 2fr;
 	gap: 2.5em;
-	align-items: center;
+	align-items: start;
 	margin-bottom: 3.5em;
 }
 
@@ -20,6 +20,8 @@
 	.educa-intro img {
 		display: block;
 		width: 100%;
+		height: 13em;
+		object-fit: cover;
 		border-radius: 4px;
 	}
 
@@ -30,6 +32,26 @@
 	gap: 2em;
 	margin-bottom: 3.5em;
 }
+
+	.educa-groups section {
+		position: relative;
+	}
+
+	.educa-groups section + section {
+		padding-left: 2em;
+	}
+
+	.educa-groups section + section::before {
+		content: "";
+		position: absolute;
+		top: 10%;
+		bottom: 10%;
+		left: -1em;
+		width: 1px;
+		background: linear-gradient(to bottom, transparent, #e0a050 30%, #e0a050 70%, transparent);
+		opacity: 0.12;
+		pointer-events: none;
+	}
 
 	.educa-groups h3 {
 		font-size: 1em;
@@ -124,6 +146,14 @@
 		grid-template-columns: 1fr 1fr;
 	}
 
+	.educa-groups section:nth-child(odd) {
+		padding-left: 0;
+	}
+
+	.educa-groups section:nth-child(odd)::before {
+		display: none;
+	}
+
 }
 
 @media screen and (max-width: 736px) {
@@ -131,6 +161,14 @@
 	.educa-groups,
 	.educa-photos {
 		grid-template-columns: 1fr;
+	}
+
+	.educa-groups section + section {
+		padding-left: 0;
+	}
+
+	.educa-groups section::before {
+		display: none;
 	}
 
 	.educa-contact {
